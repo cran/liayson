@@ -59,7 +59,7 @@ Noemi Andor
 }
 \examples{
 data(cnps)
-set.seed(2)
+set.seed(3)
 rcells = sample(colnames(cnps), 120)
 outc = clusterCells(cnps[apply(cnps, 1, var)>0, rcells])
 }
