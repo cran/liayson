@@ -4,20 +4,26 @@ aggregateSegmentExpression <- function(epg, segments, mingps = 20, GRCh = 37) {
     cells = colnames(epg)
     
     ## Map gene IDs to genomic coordinates
+    ensembl = NULL
     if (GRCh == 36) {
-        ensembl = useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "may2009.archive.ensembl.org")
+        ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "may2009.archive.ensembl.org"), silent = T)
     } else if (GRCh == 37) {
         ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "feb2014.archive.ensembl.org"), silent = T)
         if (class(ensembl) == "try-error") {
-            ensembl = useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "grch37.ensembl.org")
+            ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "grch37.ensembl.org"), silent = T)
         }
     } else if (GRCh == 38) {
         # ensembl = useEnsembl(biomart='ensembl',GRCh=NULL)
-        ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "aug2017.archive.ensembl.org"), silent = T)
+        ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "dec2016.archive.ensembl.org"), silent = T)
         if (class(ensembl) == "try-error") {
-            ensembl = useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "grch38.ensembl.org")
+            ensembl = try(useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host = "grch38.ensembl.org"), silent = T)
         }
-    } else {
+    } 
+    
+    if(class(ensembl) == "try-error"){
+        print(paste("BiomaRt service currently not available. Try again later."))
+        return()
+    }else if (is.null(ensembl)) {
         warning(paste("GRCh", GRCh, "not supported. Only supporting GRCh=36, GRCh=37 or GRCh=38. Abborting."))
         return()
     }

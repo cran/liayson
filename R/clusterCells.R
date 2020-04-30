@@ -99,7 +99,7 @@ clusterCells <- function(cnps, k = NA, h = NA, weights = NULL, minSegLength = 1e
     ii = fliplr(Z$tip.label[Z$edge[Z$edge[, 2] <= length(Z$tip.label), 2]])
     plot(Z, show.tip.label = T, tip.color = colI, cex = 0.2)
     hm = try(heatmap.2(tmp[ii, ], dendrogram = "row", margins = c(13, 6), cexCol = 0.85, Rowv = NULL, Colv = Colv, col = HMCOLS, colRow = colCol[ii], colCol = rowCol[colnames(tmp)], RowSideColors = colI[ii], 
-        symm = F, ...))
+        symm = F, trace = "none"))
     # , hclustfun = function(x) hclust(x,method =HFUN), distfun = function(x) dist(x,method ='euclidean')))
     
     colnames(cnps) = paste0("SP", TC, "_", colnames(cnps))
