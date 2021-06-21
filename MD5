@@ -1,12 +1,12 @@
-7b8358f2709f1135cd2b07fb3935a1e5 *DESCRIPTION
+46a85e15d3a23d2c68827d5d70fbb5d4 *DESCRIPTION
 89eefeab82c4abda4c54976f85329c36 *NAMESPACE
-29ac2aa94d47c758552eca5c8a303dcd *NEWS.md
+8d83f6e6ff83fbaa5b5ca8eaec49750a *NEWS.md
 d99f159164cf0d364866b95bd8dd041a *R/Utils.R
 cb393c8ad3a691d4b7bdcbc0cbacd1c6 *R/aggregateSegmentExpression.R
 421925da675efba1f42961aab064540b *R/applyAR2seg.R
 0fc3cc792a5620901d7c776708650f1c *R/assignCellsToClusters.R
 f0731dc6db11a1e69759e596a1bafc5e *R/clusterCells.R
-1726d225f147e17f3f1cdd4ccd5d16ca *R/runLIAYSON.R
+87ad0604f64e562994cff698616727a6 *R/runLIAYSON.R
 ed2cd2e221d047a777d0542e91d3273a *R/saveClusteredCells.R
 d81571ea5923001947d265940df616eb *R/segmentExpression2CopyNumber.R
 03ad996d7e924302cbb4f0cbb052f504 *R/testARstatement.R
@@ -17,7 +17,7 @@ d62c8a575413e275358927bbef0b5b02 *data/epg.rda
 0d70f7b368cbfd006b9bdbc90690ca62 *data/segments.rda
 5f8b393f0357c68b28a0c66f28707030 *inst/doc/liayson.R
 2301948f1995a8c7b9a37444a0dcb49c *inst/doc/liayson.Rnw
-0b688c5e651acd2a5048cbcb1d87daf1 *inst/doc/liayson.pdf
+897a8fe6fca6312258941d6c5b7ed116 *inst/doc/liayson.pdf
 9e34d8135ca48f53706f4f09f294bc0a *man/aggregateSegmentExpression.Rd
 df63600825adef9c82662ed013e9b074 *man/assignCellsToClusters.Rd
 6201999c35733cced20e092f7ae990b6 *man/clusterCells.Rd
