@@ -8,7 +8,7 @@ Clusters cells according to their copy number profile.
 }
 \usage{
 clusterCells(cnps, k=NA, h=NA, weights=NULL, minSegLength=1E6, 
-                       chrOrder=NULL,  HFUN="ward.D2",...)
+                       chrOrder=NULL,  HFUN="ward.D2", crit="AIC",...)
 }
 \arguments{
   \item{cnps}{
@@ -31,6 +31,9 @@ clusterCells(cnps, k=NA, h=NA, weights=NULL, minSegLength=1E6,
   }
   \item{HFUN}{
     Agglomeration method used to compute the hierarchical clustering (see also \code{\link{hclust}}).
+  }
+  \item{crit}{
+    Criterion used to opimize number of clusters.
   }
   \item{...}{additional arguments passed on to \code{\link{heatmap.2}} }
 }

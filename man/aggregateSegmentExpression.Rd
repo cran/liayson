@@ -7,7 +7,8 @@ Aggregating genes across copy number segments.
 Calculates average expression of genes grouped by common segment membership.
 }
 \usage{
-aggregateSegmentExpression(epg, segments, mingps = 20, GRCh=37)
+aggregateSegmentExpression(epg, segments, dataset="hsapiens_gene_ensembl", 
+						mingps = 20, GRCh = 37, host=NULL)
 }
 \arguments{
   \item{epg}{
@@ -20,11 +21,17 @@ aggregateSegmentExpression(epg, segments, mingps = 20, GRCh=37)
     	\bold{endpos} - the last genomic position of a copy number segment; \cr
 	    \bold{CN_Estimate} - the copy number estimated for each segment.
   }
+  \item{dataset}{
+    Dataset to download from BioMart.
+  }
   \item{mingps}{
     Minimum number of expressed genes a segment needs to contain in order to be included in output.
   }
   \item{GRCh}{
     Human reference genome version to be used for annotating gene coordinates.
+  }
+  \item{host}{
+    Host address used by BioMart.
   }
 }
 \details{
